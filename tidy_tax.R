@@ -1,5 +1,5 @@
 ## tax: Taxonomic annotation based on silva data base, loaded in R with rownames.
-function(tax){
+tidy_tax<-function(tax){
   tax<-data.frame(str_split_fixed(tax$Taxon,";",7),row.names = rownames(tax))
   tax<-apply(tax, 2, function(x){
     x[grep("^[^D]",x)]<-""
