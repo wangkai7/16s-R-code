@@ -1,4 +1,4 @@
-## tax: ASV's taxonomic annotation based on silva data base. Loaded in R with rownames.
+## tax: Taxonomic annotation based on silva data base, loaded in R with rownames.
 function(tax){
   tax<-data.frame(str_split_fixed(tax$Taxon,";",7),row.names = rownames(tax))
   tax<-apply(tax, 2, function(x){
